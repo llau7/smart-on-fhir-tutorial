@@ -75,6 +75,14 @@
           p.ldl = getQuantityValueAndUnit(ldl[0]);
           p.temperature = getQuantityValueAndUnit(temperature[0]);
 
+          var allArr = ""
+          for (let i=allergies.length; i==0;i--){
+            allArr.concat('<tr><td>'+allergies[i].code.text +'</td></tr>')
+          }
+          if(allergies.length === 0){
+            allergyTable += "<tr><td>No Allergies Documented</td></tr>"
+          }
+          console.log(allArr)
           ret.resolve(p);
         });
       } else {
@@ -98,7 +106,8 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      temperature: {value: ''}
+      temperature: {value: ''},
+      allergies: {allArr: ''}
     };
   }
 
@@ -145,6 +154,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#temperature').html(p.temperature);
+    $('#allergies').html(allArr);
   };
 
 })(window);
