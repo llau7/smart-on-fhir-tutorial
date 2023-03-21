@@ -35,8 +35,7 @@
         $.when(pt, obv, alg).fail(onError);
 
         $.when(pt, obv, alg).done(function(patient, obv, allergies) {
-          console.log(patient)
-          console.log(obv)
+
           console.log(allergies)
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
@@ -80,8 +79,9 @@
             allArr.concat('<tr><td>'+allergies[i].code.text +'</td></tr>')
           }
           if(allergies.length === 0){
-            allergyTable += "<tr><td>No Allergies Documented</td></tr>"
+            allArr += "<tr><td>No Allergies Documented</td></tr>"
           }
+          p.allergy = allArr;
           console.log(allArr)
           ret.resolve(p);
         });
@@ -107,7 +107,7 @@
       ldl: {value: ''},
       hdl: {value: ''},
       temperature: {value: ''},
-      allergies: {allArr: ''}
+      allArr: {allArr: ''}
     };
   }
 
@@ -154,7 +154,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#temperature').html(p.temperature);
-    $('#allergies').html(allArr);
+    $('#allergies').html(p.allergy);
   };
 
 })(window);
