@@ -88,7 +88,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      temperature: {value: ''},
+      temperature: {value: ''}
     };
   }
 
@@ -132,7 +132,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#temperature').html(p.temperature)
+    $('#temperature').html('Hello')
   };
 
 })(window);
