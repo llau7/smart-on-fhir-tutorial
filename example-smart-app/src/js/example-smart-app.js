@@ -82,7 +82,7 @@
             allArr += "<tr><td>No Allergies Documented</td></tr>"
           }
           p.allergy = allArr;
-          console.log(allArr)
+          console.log(p.allergy)
           ret.resolve(p);
         });
       } else {
