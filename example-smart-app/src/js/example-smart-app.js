@@ -76,7 +76,7 @@
 
           var allArr = ""
           for (let i=allergies.length; i==0;i--){
-            allArr.concat('<tr><td>'+allergies[i][code][text] +'</td></tr>')
+            allArr.concat('<tr><td>'+allergies[i].code.text.value +'</td></tr>')
           }
           if(allergies.length === 0){
             allArr += "<tr><td>No Allergies Documented</td></tr>"
